@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biz Kimiz?</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,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">
+    
+<style>
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #535353;
+}
+
+small {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  text-align: center;
+  padding: 33px 0;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -1px;
+  color: inherit;
+  font-size: 40px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+  font-weight: 300;
+  color: inherit;
+  padding: 50px;
+}
+
+.center {
+  text-align: center;
+}
+
+
+section {
+  height: 100vh;
+}
+
+nav {
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 50px 0;
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+  background-color: darkblue;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: #555;
+}
+
+nav.stroke ul li a,
+nav.fill ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #333;
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+nav.fill ul li a {
+  transition: all 2s;
+}
+
+nav.fill ul li a:after {
+  text-align: left;
+  content: '.';
+  margin: 0;
+  opacity: 0;
+}
+nav.fill ul li a:hover {
+  color: #023f1c;
+  z-index: 1;
+}
+nav.fill ul li a:hover:after {
+  z-index: -10;
+  animation: fill 1s forwards;
+  -webkit-animation: fill 1s forwards;
+  -moz-animation: fill 1s forwards;
+  opacity: 1;
+}
+
+
+nav.circle ul li a {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+nav.circle ul li a:after {
+  display: block;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '.';
+  color: transparent;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background: transparent;
+}
+nav.circle ul li a:hover:after {
+  -webkit-animation: circle 1.5s ease-in forwards;
+  animation: circle 1.5s ease-in forwards;
+}
+
+
+nav.shift ul li a {
+  position:relative;
+  z-index: 1;
+}
+nav.shift ul li a:hover {
+  color: #000000;
+}
+nav.shift{padding: 0px;}
+nav.shift ul li a:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100px;
+  content: '.';
+  color: transparent;
+  background: #cecece;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+  
+}
+nav.shift ul li a:hover:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+
+ul{margin: 0;}
+
+nav.blend ul li a {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1;
+}
+nav.blend ul li a:hover {
+  color: #fff;
+}
+nav.blend ul li a:before,
+nav.blend ul li a:after {
+  position: absolute;
+  width: 0px;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  background: #D35400;
+  transition: all .5s;
+  margin: auto;
+  content: '.';
+  color: transparent;
+  z-index: -1;
+  opacity: 0.75;
+}
+nav.blend ul li a:before {
+  left: 0;
+}
+nav.blend ul li a:after {
+  right: 0;
+}
+
+nav.blend ul li a:hover:after,
+nav.blend ul li a:hover:before {
+  width: 100%;
+}
+
+nav.drown ul li a {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+nav.drown ul li a:hover {
+  color: #fff;
+}
+
+nav.drown ul li a:before {
+  background: #fff;
+  content: '.';
+  color: transparent;
+  position: absolute;
+  width: 500%;
+  top: 100px;
+  right: 300px;
+  height: 300px;
+  z-index: -1;
+}
+nav.drown ul li a:hover:before {
+  left: auto;
+  bottom: auto;
+  right: -50%;
+  top: 0;
+  background: #89C52B;
+}
+
+@keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background: #2ECC71;
+  }
+}
+
+@keyframes circle {
+  0% {
+    width: 1px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 1px;
+    z-index: -1;
+    background: #eee;
+    border-radius: 100%;
+  }
+  100% {
+    background: #aaa;
+    height: 5000%;
+    width: 5000%;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0;
+  }
+}
+h1{text-align: center;font-family: consolas;color: #2ECC71;font-size: 60px;}
+h2,h3,h4,h5{
+font-family: consolas;
+}
+h4{font-size: 30px;color:rgb(255, 0, 0)}
+#poyraz,#kaan,#amaç{color: lime;}
+</style>
+</head>
+<body>
+
+<section>
+    <img src="https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg" alt="" style="
+    position: fixed;
+    top:  1%;
+    left: 1%;
+    z-index: -5;
+    width: 100%;
+    margin: -1%;
+">
+    <h1>Biz Kimiz?</h1>
+    <nav class="shift">
+        <ul>
+         <li><a href="Anasayfa.html">Anasayfa</a></li>
+         <li><a href="Hakkımızda.html">Hakkımızda</a></li>
+         <li><a href="Kaynakça.html">Kaynakça</a></li>
+         <li><a href="Haberler.html">Haberler</a></li>
+        </ul>
+    </nav>
+ <h4>
+    <div id="poyraz">Poyraz ERDEM:</div>
+        15 yaşında ve İstanbula Atatürk Fen Lisesinin hazırlık sınıfında okuyor ve okulun yurdunda kalıyor. Gitar çalmayı, League Of Legends oynamayı ve müzik dinlemeyi seviyor. Insider Code Academy’ ye 2023 yılında katıldı. <br>
+        <br>
+    <div id="kaan">Kaan TURGUN: </div> 
+        14 yaşında ve İstanbul Atatürk Fen Lisesinin hazırlık sınıfında okuyor ve okulun yurdunda kalıyor. Metal türünde müzik dinlemeyi ve bilgisayar oyunları oynamayı seviyor. Insider Code Academy’ ye 2023 yılında katıldı.
+        <br>
+        <br>
+    <div id="amaç">AMACIMIZ:</div> 
+Ülkemizde yaşanan deprem felaketlerinden dolayı bilinçsiz halkı güvenilir,kaynağı belli ve doğru bilgilerle bilgilendirerek daha fazla can kaybının ve yaralanmanın önüne geçmek,insanları deprem ve deprem anı hakkında bilgilendirmek ve yapılması gereken aksiyonları açıklamak.
+</h4>    
+
+</section>    
+
+
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaynakça</title>
+    <link rel="icon" type="image/png" href="https://cdn.create.vista.com/api/media/small/316818524/stock-vector-education-text-book-with-magnifying">
+    <img src="https://static.birgun.net/resim/haber-detay-resim/2020/09/27/her-bilimsel-makale-bilimsel-midir-785588-5.jpg" alt=""
+     style="
+     position: fixed;
+     top:  1%;
+     left: 1%;
+     z-index: -5;
+     width: 100%;
+     margin: -1%;
+    
+">
+<style>
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #535353;
+}
+
+small {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  text-align: center;
+  padding: 33px 0;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -1px;
+  color: inherit;
+  font-size: 40px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+  font-weight: 300;
+  color: inherit;
+  padding: 50px;
+}
+
+.center {
+  text-align: center;
+}
+
+
+section {
+  height: 100vh;
+}
+
+nav {
+  width: 100%;
+  margin: 0 auto;
+  background: #ffe864;
+  padding: 50px 0;
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: #555;
+}
+
+nav.stroke ul li a,
+nav.fill ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #333;
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+nav.fill ul li a {
+  transition: all 2s;
+}
+
+nav.fill ul li a:after {
+  text-align: left;
+  content: '.';
+  margin: 0;
+  opacity: 0;
+}
+nav.fill ul li a:hover {
+  color: #023f1c;
+  z-index: 1;
+}
+nav.fill ul li a:hover:after {
+  z-index: -10;
+  animation: fill 1s forwards;
+  -webkit-animation: fill 1s forwards;
+  -moz-animation: fill 1s forwards;
+  opacity: 1;
+}
+
+
+nav.circle ul li a {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+nav.circle ul li a:after {
+  display: block;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '.';
+  color: transparent;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background: transparent;
+}
+nav.circle ul li a:hover:after {
+  -webkit-animation: circle 1.5s ease-in forwards;
+  animation: circle 1.5s ease-in forwards;
+}
+
+
+nav.shift ul li a {
+  position:relative;
+  z-index: 1;
+}
+nav.shift ul li a:hover {
+  color: #000000;
+}
+nav.shift{padding: 0px;}
+nav.shift ul li a:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100px;
+  content: '.';
+  color: transparent;
+  background: #cecece;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+  
+}
+nav.shift ul li a:hover:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+ul{margin: 0;}
+nav.blend ul li a {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1;
+}
+nav.blend ul li a:hover {
+  color: #fff;
+}
+nav.blend ul li a:before,
+nav.blend ul li a:after {
+  position: absolute;
+  width: 0px;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  background: #D35400;
+  transition: all .5s;
+  margin: auto;
+  content: '.';
+  color: transparent;
+  z-index: -1;
+  opacity: 0.75;
+}
+nav.blend ul li a:before {
+  left: 0;
+}
+nav.blend ul li a:after {
+  right: 0;
+}
+
+nav.blend ul li a:hover:after,
+nav.blend ul li a:hover:before {
+  width: 100%;
+}
+
+nav.drown ul li a {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+nav.drown ul li a:hover {
+  color: #fff;
+}
+
+nav.drown ul li a:before {
+  background: #fff;
+  content: '.';
+  color: transparent;
+  position: absolute;
+  width: 500%;
+  top: 100px;
+  right: 300px;
+  height: 300px;
+  z-index: -1;
+}
+nav.drown ul li a:hover:before {
+  left: auto;
+  bottom: auto;
+  right: -50%;
+  top: 0;
+  background: #89C52B;
+}
+
+@keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background: #2ECC71;
+  }
+}
+
+@keyframes circle {
+  0% {
+    width: 1px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 1px;
+    z-index: -1;
+    background: #eee;
+    border-radius: 100%;
+  }
+  100% {
+    background: #aaa;
+    height: 5000%;
+    width: 5000%;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0;
+  }
+}
+
+    h1,h2,h3,h4,h5{
+font-family: consolas;
+}
+h1{text-align: center;font-size: 60px;margin-top: 0;color: rgb(255, 123, 0);}
+#afad,.olgus{font-size: 30px;text-align: center;color: #000000;}
+
+</style>
+</head>
+<body>
+    <section>
+        <img src="https://static.birgun.net/resim/haber-detay-resim/2020/09/27/her-bilimsel-makale-bilimsel-midir-785588-5.jpg" alt=""
+     style="
+     position: fixed;
+     top:  1%;
+     left: 1%;
+     z-index: -5;
+     width: 100%;
+     margin: -1%;">
+
+        <h1>Bu Bilgileri Edindiğimiz Kaynaklar</h1>
+        <nav class="shift">
+          <ul>
+            <li><a href="Anasayfa.html">Anasayfa</a></li>
+            <li><a href="Hakkımızda.html">Hakkımızda</a></li>
+            <li><a href="Kaynakça.html">Kaynakça</a></li>
+            <li><a href="Haberler.html">Haberler</a></li>
+          </ul>
+          
+        </nav>
+        <ol class="olgus">
+            <li><a href="https://www.afad.gov.tr/deprem-aninda-neler-yapmalisiniz">https://www.afad.gov.tr/deprem-aninda-neler-yapmalisiniz</a></li>
+            <li><a href="https://tr.wikipedia.org/wiki/Deprem">https://tr.wikipedia.org/wiki/Deprem</a></li>
+            <li><a href="http://www.koeri.boun.edu.tr/sismo/bilgi/depremnedir/index.htm">http://www.koeri.boun.edu.tr/sismo/bilgi/depremnedir/index.htm</a></li>
+            <li><a href="https://orgm.meb.gov.tr/psikososyaldijitaldestek/pdf/deprem.pdf">https://orgm.meb.gov.tr/psikososyaldijitaldestek/pdf/deprem.pdf</a></li>
+            <li><a href="https://evrimagaci.org/deprem-nedir-depremlere-sebep-olan-doga-yasalari-ve-bu-yasalari-aciklayan-modeller-nelerdir-8936">https://evrimagaci.org/deprem-nedir-depremlere-sebep-olan-doga-yasalari-ve-bu-yasalari-aciklayan-modeller-nelerdir-8936</a></li>
+        </ol>
+        
+
+
+
+      </section>
+    
+</body>
+</html>

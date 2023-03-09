@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="https://static-00.iconduck.com/assets.00/earthquake-icon-256x256-dqxj8jet.png">
+<style type="text/css">
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #535353;
+}
+
+small {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  text-align: center;
+  padding: 33px 0;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -1px;
+  color: inherit;
+  font-size: 40px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+  font-weight: 300;
+  color: inherit;
+  padding: 50px;
+}
+
+.center {
+  text-align: center;
+}
+
+
+section {
+  height: 100vh;
+}
+
+nav {
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 50px 0;
+  background-color: #c70303;
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: #555;
+}
+
+nav.stroke ul li a,
+nav.fill ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #333;
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+nav.fill ul li a {
+  transition: all 2s;
+}
+
+nav.fill ul li a:after {
+  text-align: left;
+  content: '.';
+  margin: 0;
+  opacity: 0;
+}
+nav.fill ul li a:hover {
+  color: #023f1c;
+  z-index: 1;
+}
+nav.fill ul li a:hover:after {
+  z-index: -10;
+  animation: fill 1s forwards;
+  -webkit-animation: fill 1s forwards;
+  -moz-animation: fill 1s forwards;
+  opacity: 1;
+}
+
+
+nav.circle ul li a {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+nav.circle ul li a:after {
+  display: block;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '.';
+  color: transparent;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background: transparent;
+}
+nav.circle ul li a:hover:after {
+  -webkit-animation: circle 1.5s ease-in forwards;
+  animation: circle 1.5s ease-in forwards;
+}
+
+
+nav.shift ul li a {
+  position:relative;
+  z-index: 1;
+}
+nav.shift ul li a:hover {
+  color: #000000;
+}
+nav.shift{padding: 0px;}
+nav.shift ul li a:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100px;
+  content: '.';
+  color: transparent;
+  background: #cecece;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+  
+}
+nav.shift ul li a:hover:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+
+ul{margin: 0;}
+
+nav.blend ul li a {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1;
+}
+nav.blend ul li a:hover {
+  color: #fff;
+}
+nav.blend ul li a:before,
+nav.blend ul li a:after {
+  position: absolute;
+  width: 0px;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  background: #D35400;
+  transition: all .5s;
+  margin: auto;
+  content: '.';
+  color: transparent;
+  z-index: -1;
+  opacity: 0.75;
+}
+nav.blend ul li a:before {
+  left: 0;
+}
+nav.blend ul li a:after {
+  right: 0;
+}
+
+nav.blend ul li a:hover:after,
+nav.blend ul li a:hover:before {
+  width: 100%;
+}
+
+nav.drown ul li a {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+nav.drown ul li a:hover {
+  color: #fff;
+}
+
+nav.drown ul li a:before {
+  background: #fff;
+  content: '.';
+  color: transparent;
+  position: absolute;
+  width: 500%;
+  top: 100px;
+  right: 300px;
+  height: 300px;
+  z-index: -1;
+}
+nav.drown ul li a:hover:before {
+  left: auto;
+  bottom: auto;
+  right: -50%;
+  top: 0;
+  background: #89C52B;
+}
+
+@keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background: #2ECC71;
+  }
+}
+
+@keyframes circle {
+  0% {
+    width: 1px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 1px;
+    z-index: -1;
+    background: #eee;
+    border-radius: 100%;
+  }
+  100% {
+    background: #aaa;
+    height: 5000%;
+    width: 5000%;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0;
+  }
+}
+p{color: #023f1c;}
+
+#paragraf1{margin-block: 0;font-family: Arial, Helvetica, sans-serif; text-align: center;}
+h2{padding: 34px;color: #2ECC71;font-family: consolas;}
+h3{text-align: center;font-family: consolas;}
+h4{color: #2ECC71;margin-block: 0;font-family: consolas; font-size: 17px;}
+</style>
+</head>
+
+<body>
+<h1 style="color: crimson;font: 1300;">DEPREM 101</h1>
+<img src="https://www.bursamuhalif.com/wp-content/uploads/2022/03/1556529651549-deprem.jpg"  alt="" style="
+    position: fixed;
+    top:  1%;
+    left: 1%;
+    z-index: -5;
+    width: 100%;
+    margin: -1%;
+    opacity: 0.45;
+">
+<section  color: rgba(0, 0, 0, 0.5);>
+  <nav class="shift">
+    <ul>
+      <li><a href="Anasayfa.html">Anasayfa</a></li>
+      <li><a href="Hakkımızda.html">Hakkımızda</a></li>
+      <li><a href="Kaynakça.html">Kaynakça</a></li>
+      <li><a href="Haberler.html">Haberler</a></li>
+    </ul>
+  </nav>
+  <h1 style="color: #2ECC71;">Deprem 101'e hoşgeldiniz</h1>
+  <h4 id=paragraf1 style="color: #2ECC71;">Deprem, yer sarsıntısı, seizma veya zelzele, yer kabuğunda beklenmedik bir anda ortaya çıkan enerji sonucunda meydana gelen sismik dalgalanmalar ve bu dalgaların yeryüzünü sarsması olayıdır. Sismik aktivite ile kastedilen meydana geldiği alandaki depremin frekansı, türü ve büyüklüğüdür.</h4>
+  <img src="https://img3.aksam.com.tr/imgsdisk/2022/03/18/t25_deprem-nedir-nasil-ve-ned-724.jpg" alt="deprem görseli" height="400" width="669">
+  <img src="https://bilgihanem.com/wp-content/uploads/2014/10/deprem-nedir-nasil-olusur-1024x597.jpg" alt="deprem görseli2" height="400" width="669">
+  <h2 style="font-size: xx-large; ;">Deprem Nasıl Oluşur?</h2>
+  <h4>Depremlerinin olusumu "Elastik Sıçrama" (Elastic Rebound) teorisi ile açıklanır. 
+    Bu teoriye göre, herhangibir noktada, zamana bağımlı olarak, yavaş yavaş oluşan birim deformasyon birikiminin elastik olarak depoladığı enerji, kritik bir değere eriştiğinde, fay düzlemi boyunca var olan sürtünme kuvvetini yenerek, fay çizgisinin her iki tarafındaki kayaç bloklarının birbirine göreli hareketlerini oluşturmaktadır. 
+    Bu olay ani yer değiştirme hareketidir. 
+    Bu ani yer değiştirmeler ise bir noktada biriken birim deformasyon enerjisinin açığa çıkması, boşalması, diğer bir deyişle mekanik enerjiye dönüşmesi ile ve sonuç olarak yer katmanlarının kırılma ve yırtılma hareketi ile olmaktadır.
+    Aslında kayaların, önceden bir birim yerdeğiştirme birikimine uğramadan kırılmaları olanaksızdır. 
+    Bu birim yer değiştirme hareketlerini, hareketsiz görülen yerkabuğunda, üst mantoda oluşan konveksiyon akımları oluşturmakta, kayalar belirli bir deformasyona kadar dayanıklılık gösterebilmekte ve sonrada kırılmaktadır. 
+    İşte bu kırılmalar sonucu depremler oluşmaktadır. 
+    Bu olaydan sonra da kayalardan uzak zamandan beri birikmiş olan gerilmelerin ve enerjinin bir kısmı ya da tamamı giderilmiş olmaktadır. </h4>
+  <img src="https://8luvomezzzsk.merlincdn.net/wp-content/uploads/2015/10/dunya_cekirdek-300x200.jpg" alt="dünya çekirdek" height="470" width="690">
+  <img src="https://8luvomezzzsk.merlincdn.net/wp-content/uploads/2015/10/3-deprem-1030x730.jpg" alt="deprem 3" height="470" width="649">
+  <h2 style="font-size: xx-large; ;">Deprem Anında Ne Yapmalıyız ve Ne Yapmamalıyız?</h2>
+   <strong><h3 style="color: red;">Bina içindeyseniz</h3></strong>
+    <h4><ol>
+    <li style="color: blue;">Kesinlikle panik yapmayınız.</li>
+    <li style="color: blueviolet;">Sabitlenmemiş dolap, raf, pencere vb. eşyalardan uzak durunuz.</li>
+    <li style="color: brown;">Varsa sağlam sandalyelerle desteklenmiş masa altına veya dolgun ve hacimli koltuk, kanepe, içi dolu sandık gibi koruma sağlayabilecek eşya yanına çömelerek veya uzanarak kendinize hayat üçgeni oluşturun. Başınızı iki elinizin arasına alarak veya bir koruyucu (yastık, kitap vb) malzeme ile koruyun. Sarsıntı geçene dek bekleyin. Güvenli bir yer bulup, diz üstü ÇÖK, baş ve enseyi koruyacak şekilde KAPAN, düşmemek için sabit bir yere TUTUN hareketini yapın. Deprem sırasında sarsıntı durana kadar olduğunuz yerde kalın.</li>
+    <li style="color: burlywood;">Cam, pencere, dışarıya bakan duvar ve kapılardan, aydınlatma tesisatı veya armatürü gibi üzerinize düşecek her tür eşyadan uzak durun.</li>
+    <li style="color: cadetblue;">Sarsıntı başladığında yataktaysanız orada kalın. Üzerinize düşecek ağır bir eşya yoksa bir yastıkla başınızı koruyun; varsa en yakındaki güvenli alana geçin.</li>
+    <li style="color: chartreuse;">Size yakın çok sağlam ve yüke dayanıklı bildiğiniz bir kapı değilse, kapıyı kullanmayın. Çoğu iç mekan kapısı basitçe inşa edilmiştir ve sizi korumaktan uzaktır.</li>
+    <li style="color: chocolate;">Merdivenlere ya da çıkışlara doğru koşmayın. Sarsıntı bitene kadar içeride kalın, ancak sarsıntı bitince dışarı çıkmak güvenlidir. Sarsıntı sırasında binayı terk etmeye çalışmayın.</li>
+    <li style="color: coral;">Araştırmalar, çoğu yaralanmanın bina içinde hareket ederken veya dışarı çıkmaya çalışırken oluştuğunu göstermektedir.</li>
+    <li style="color: cornflowerblue;">Balkona çıkmayın.</li>
+    <li style="color: cornsilk;">Balkonlardan ya da pencerelerden atlamayın.</li>
+    <li style="color: crimson;">Asansör kullanmayın.</li>
+    <li style="color: cyan;">ACİL DURUMLARI ve YANGINLARI bildirmek dışında telefonları KULLANMAYIN. Kibrit ve çakmak YAKMAYIN, elektrik düğmelerine DOKUNMAYIN.</li>
+    <li style="color: darkblue;">Elektriklerin kesilebileceğinin; yangın alarmlarının çalışabileceğinin ve yangın söndürme sistemlerinin devreye girebileceğinin farkında olun</li>
+    <li style="color: darkcyan;">Tekerlekli sandalyede iseniz tekerlekleri kilitleyerek başınızı ve boynunuzu korumaya alın.</li>
+    <li style="color: darkgoldenrod;">Mutfak, imalathane, laboratuvar gibi iş aletlerinin bulunduğu yerlerde; ocak, fırın vb. cihazları kapatın. Dökülebilecek malzeme ve maddelerden uzaklaşın.</li>
+    <li style="color: darkgray;">Sarsıntı geçtikten sonra elektrik, gaz ve su vanalarını kapatın; soba ve ısıtıcıları söndürün. Diğer güvenlik önlemlerini alın; daha önceden hazırlanmış acil durum çantası ile gerekli olan eşya ve malzemeyi yanınıza alarak binayı daha önce tespit ettiğiniz yoldan derhal terk edip toplanma bölgesine gidin.</li>
+    <li style="color: deeppink;">Her büyük depremden sonra mutlaka artçı deprem olur. Artçı depremler zaman içerisinde seyrekleşir ve büyüklükleri azalır. Artçı depremler hasarlı binalarda zarara yol açabilir. Bu nedenle sarsıntılar tamamen bitene kadar hasarlı binalara girmeyin</li>
+    <li style="color: darkgrey;">Artçı depremler sırasında da ana depremde yapmanız gerekenleri yapın.</li>
+    <img src="https://ogrencigundemi.com/wp-content/uploads/2020/11/deprem-an%C4%B1nda-ac%C4%B1k-alanda-ne-yap%C4%B1lmal%C4%B1.jpg" alt="" height="400" width="700" style="margin: 15px -37px;">         
+  </ol></h4>
+ <strong><h3 style="color: red;">Bina dışında açık alandaysanız</h3></strong> 
+<h4>
+  <ol>
+    <li style="color: darkgrey;">Dışarıda kalın.</li>
+    <li style="color: darkgreen;">Enerji hatlarından, diğer binalardan, direklerden, ağaçlardan ve duvar diplerinden uzaklaşın.</li>
+    <li style="color: darkgray;">Açık arazide çömelerek etraftan gelen tehlikelere karşı hazırlıklı olun.</li>
+    <li style="color: darkgoldenrod;">Deniz kıyısından uzaklaşın.</li>
+    <li style="color: darkcyan;">Toprak kayması, taş veya kaya düşebilecek yamaç altlarında bulunmayın. Böyle bir ortamda bulunuyorsanız, en seri şekilde güvenli bir ortama geçin.</li>
+    <li style="color: darkblue;">Binalardan düşebilecek baca, cam kırıkları ve sıvalara karşı tedbirli olun.</li>
+    <li style="color: cyan;">Toprak altındaki kanalizasyon, elektrik ve gaz hatlarından gelecek tehlikelere karşı dikkatli olun.</li>
+    <li style="color: crimson;">En büyük tehlike binaların dış duvarlarının yıkılmasıdır. Depremlerdeki ölümlerin önemli bir kısmını bina içinden dışarı kaçarak enkaz altında kalanlar oluşturabilmektedir. Deprem sırasındaki yer hareketi nadiren ölüme veya yaralanmaya sebep olur. Depremle ilgili çoğu ölüm çöken duvarlar, parçalanan camlar ve düşen eşyalardan kaynaklanmaktadır.</li>
+  </ol>
+</h4>
+<img src="https://static.birgun.net/resim/haber-detay-resim/2020/11/04/depremde-neler-yapmali-neler-yapilmamali-800911-5.jpg" alt="">
+<h3 style="color: red;">Araç kullanıyorsanız</h3>
+<h4>
+  <ol>
+    <li style="color: cornsilk;">Araç kara yolunda seyir halindeyken sarsıntı olursa ve bulunduğunuz yer güvenli ise ( bina, ağaç, direkler yanında, üst geçit altlarında durmaktan sakınarak) yolu kapatmadan, sağa yanaşıp durun. Kontak anahtarını yerinde bırakıp, pencereler kapalı olarak araç içerisinde kalın.</li>
+    <li style="color: cornflowerblue;">Sarsıntının geçmesini ihtiyatla bekleyin. Depremde hasar gören yol, köprü ve rampaları kullanmayın.</li>
+    <li style="color: coral;">Normal trafikten, ağaçlardan, direklerden ve enerji nakil hatlarından mümkün olduğu kadar uzaklaşın. Ancak sarsıntı durduktan sonra açık alanlara gidin.</li>
+    <li style="color: chocolate;">Araç meskun mahallerde ise ya da güvenli bir yerde değilse aracı durdurun; kontak anahtarını üzerinde bırakarak aracı terk edin ve açık alanlara gidin.</li>
+    <li style="color: chartreuse;">Bir tünelin içinde iseniz ve çıkışa yakın değilseniz, aracınızı durdurup aşağıya inin ve aracınızın yanına yan yatarak ayaklarınızı karnınıza çekin, ellerinizi de başınızın üstüne kavuşturun.</li>
+    <li style="color: cadetblue;">Kapalı bir otoparkta iseniz; arabanızın dışına çıkıp yanına yatın. Üzerinize yıkılacak tavan, tünel gibi büyük kitleler aracı belki ezecek, ama yok etmeyecektir. Araç içinde olduğunuz takdirde, üzerinize düşen bir parça ile ezilmenize sebep olabilir.</li>
+  </ol>
+</h4>
+<img src="https://bolgehaberajansi.com.tr/wp-content/uploads/2023/02/Adsiz-tasarim-1.png" alt="">
+<h3 style="color: red;">Metroda veya diğer toplu taşıma araçlarındaysanız</h3>
+<h4>
+  <ol>
+    <li style="color: burlywood;">Gerekmedikçe, kesinlikle metro ve trenden inmeyin. Elektriğe kapılabilir veya diğer bir trenin çarpması ile zarar görebilirsiniz.</li>
+    <li style="color: brown;">Trenin içinde sıkıca tutturulmuş askı, korkuluk veya herhangi bir yere tutunun.</li>
+    <li style="color: blueviolet;">Metro veya tren personeli tarafından verilen talimatları izleyin.</li>
+  </ol>
+</h4>
+<img src="https://img3.aksam.com.tr/imgsdisk/2023/02/14/t25_istanbul-havalimani-metro-193.jpg" alt="" height="550" width="1050">
+
+
+
+
+
+
+
+
+
+
+  </section>
+</body>
+
+</html>
